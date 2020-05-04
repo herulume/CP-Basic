@@ -12,7 +12,7 @@
 \let\uk=\emph
 \def\aspas#1{``#1"}
 %================= lhs2tex=====================================================%
-%include polycode.fmt 
+%include polycode.fmt
 %format (div (x)(y)) = x "\div " y
 %format succ = "\succ "
 %format ==> = "\Longrightarrow "
@@ -48,7 +48,7 @@
 %format (anaA (f) (g)) = "\ana{" f "~" g "}_A"
 %format (cataB (f) (g)) = "\cata{" f "~" g "}_B"
 %format (anaB (f) (g)) = "\ana{" f "~" g "}_B"
-%format Either a b = a "+" b 
+%format Either a b = a "+" b
 %format fmap = "\mathsf{fmap}"
 %format NA   = "\textsc{na}"
 %format NB   = "\textsc{nb}"
@@ -115,11 +115,11 @@
 \begin{tabular}{ll}
 \textbf{Grupo} nr. & 99 (preencher)
 \\\hline
-a11111 & Nome1 (preencher)	
+a11111 & Nome1 (preencher)
 \\
-a22222 & Nome2 (preencher)	
+a22222 & Nome2 (preencher)
 \\
-a33333 & Nome3 (preencher)	
+a33333 & Nome3 (preencher)
 \end{tabular}
 \end{center}
 
@@ -131,7 +131,7 @@ parte-se de um repertório de \emph{combinadores} que formam uma álgebra da
 programação (conjunto de leis universais e seus corolários) e usam-se esses
 combinadores para construir programas \emph{composicionalmente}, isto é,
 agregando programas já existentes.
-  
+
 Na sequência pedagógica dos planos de estudo dos dois cursos que têm
 esta disciplina, restringe-se a aplicação deste método à programação
 funcional em \Haskell. Assim, o presente trabalho prático coloca os
@@ -172,7 +172,6 @@ o ``kit'' básico, escrito em \Haskell, para realizar o trabalho. Basta executar
 \begin{code}
 {-# OPTIONS_GHC -XNPlusKPatterns #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving, DeriveDataTypeable, FlexibleInstances #-}
---module Cp1920t where 
 import Cp
 import List  hiding (fac)
 import Nat
@@ -256,7 +255,7 @@ Deverá ser possível:
 \begin{itemize}
 \item
 |dic_rd| --- procurar traduções para uma determinada palavra
-\item	
+\item
 |dic_in| --- inserir palavras novas (palavra e tradução)
 \item
 |dic_imp| --- importar dicionários do formato ``lista de pares palavra-tradução"
@@ -266,10 +265,10 @@ Deverá ser possível:
 A implementação deve ser baseada no módulo \textbf{Exp.hs} que está incluído no material deste trabalho prático,
 que deve ser estudado com atenção antes de abordar este problema.
 
-    \begin{figure}          
+    \begin{figure}
     \includegraphics[scale=0.15]{images/dic.png}
     \caption{Representação em memória do dicionário dado para testes.}
-    \label{fig:dic}          
+    \label{fig:dic}
     \end{figure}
 
 No anexo \ref{sec:codigo} é dado um dicionário para testes, que corresponde à figura \ref{fig:dic}.
@@ -315,12 +314,12 @@ prop_dic_rd (p,t) = dic_rd  p t == lookup p (dic_exp t)
     neste documento). Recomenda-se o
     uso desta função para efeitos de teste e ilustração.}
 
-    \begin{figure}          
+    \begin{figure}
     \includegraphics[scale=0.26]{images/example1.png}
     \includegraphics[scale=0.26]{images/example2.png}
     \caption{Duas árvores binárias de procura; a da esquerda vai ser designada
     por $t_1$ e a da direita por $t_2$.}
-    \label{fig:ex}          
+    \label{fig:ex}
     \end{figure}
   Note que tais árvores permitem reduzir \emph{significativamente}
   o espaço de procura, dado que ao procurar um valor podemos sempre
@@ -459,7 +458,7 @@ prop_ord = isOrd . (foldr insOrd Empty)
     \label{exrot2:fig}
     \end{figure}
 
-    Começe então por implementar as funções   
+    Começe então por implementar as funções
 \begin{code}
 rrot :: BTree a -> BTree a
 lrot :: BTree a -> BTree a
@@ -745,7 +744,7 @@ seguidas as seguintes condições:
 \item	Cada ladrilho deverá ter as dimensões 80x80
 \item	O programa deverá gerar mosaicos de quaisquer dimensões, mas deverá ser apresentado como figura no relatório o mosaico de 10x10 ladrilhos.
 \item	Valorizar-se-ão respostas elegantes e com menos linhas de código \Haskell.
-\end{itemize} 
+\end{itemize}
 No anexo \ref{sec:codigo} é dada uma implementação da operação de permuta aleatória de uma lista que pode ser útil para resolver este exercício.
 
     \begin{figure}\centering
@@ -769,7 +768,7 @@ No anexo \ref{sec:codigo} é dada uma implementação da operação de permuta a
 \appendix
 
 \section{Como exprimir cálculos e diagramas em LaTeX/lhs2tex}
-Estudar o texto fonte deste trabalho para obter o efeito:\footnote{Exemplos tirados de \cite{Ol18}.} 
+Estudar o texto fonte deste trabalho para obter o efeito:\footnote{Exemplos tirados de \cite{Ol18}.}
 \begin{eqnarray*}
 \start
 	|id = split f g|
@@ -792,8 +791,8 @@ Estudar o texto fonte deste trabalho para obter o efeito:\footnote{Exemplos tira
 \qed
 \end{eqnarray*}
 
-Os diagramas podem ser produzidos recorrendo à \emph{package} \LaTeX\ 
-\href{https://ctan.org/pkg/xymatrix}{xymatrix}, por exemplo: 
+Os diagramas podem ser produzidos recorrendo à \emph{package} \LaTeX\
+\href{https://ctan.org/pkg/xymatrix}{xymatrix}, por exemplo:
 \begin{eqnarray*}
 \xymatrix@@C=2cm{
     |Nat0|
@@ -856,7 +855,7 @@ emp x = Node(x,(Empty,Empty))
 t7 = emp 7
 t16 = emp 16
 t7_10_16 = Node(10,(t7,t16))
-t1_2_nil = Node(2,(emp 1, Empty)) 
+t1_2_nil = Node(2,(emp 1, Empty))
 t' = Node(5,(t1_2_nil, t7_10_16))
 
 t0_2_1 = Node(2, (emp 0, emp 3))
@@ -895,7 +894,7 @@ instance Arbitrary a => Arbitrary (BTree a) where
                 (liftM2 $ curry (inBTree . i2))
                 QuickCheck.arbitrary (liftM2 (,) (genbt (n-1)) (genbt 0)),
                 (liftM2 $ curry (inBTree . i2))
-                QuickCheck.arbitrary (liftM2 (,) (genbt 0) (genbt (n-1)))]               
+                QuickCheck.arbitrary (liftM2 (,) (genbt 0) (genbt (n-1)))]
 
 instance (Arbitrary v, Arbitrary o) => Arbitrary (Exp v o) where
     arbitrary = (genExp 10)  where
@@ -907,7 +906,7 @@ instance (Arbitrary v, Arbitrary o) => Arbitrary (Exp v o) where
                                                              (genExp (n-1)) (genExp (n-1)))),
                          liftM (inExp . i2 . (\(a,(b,c,d)) -> (a,[b,c,d])))
                          $ (liftM2 (,) QuickCheck.arbitrary (liftM3 (,,)
-                                                             (genExp (n-1)) (genExp (n-1)) (genExp (n-1))))        
+                                                             (genExp (n-1)) (genExp (n-1)) (genExp (n-1))))
                       ]
 
 orderedBTree :: Gen (BTree Int)
@@ -921,7 +920,7 @@ instance (Arbitrary a) => Arbitrary (Bdt a) where
                 (liftM2 $ curry (Query))
                 QuickCheck.arbitrary (liftM2 (,) (genbt (n-1)) (genbt 0)),
                 (liftM2 $ curry (Query))
-                QuickCheck.arbitrary (liftM2 (,) (genbt 0) (genbt (n-1)))]      
+                QuickCheck.arbitrary (liftM2 (,) (genbt 0) (genbt (n-1)))]
 
 
 \end{code}
@@ -963,7 +962,7 @@ run = do { system "ghc cp1920t" ; system "./cp1920t" }
 \section{Soluções dos alunos}\label{sec:resolucao}
 Os alunos devem colocar neste anexo as suas soluções aos exercícios
 propostos, de acordo com o "layout" que se fornece. Não podem ser
-alterados os nomes ou tipos das funções dadas, mas pode ser adicionado texto e/ou 
+alterados os nomes ou tipos das funções dadas, mas pode ser adicionado texto e/ou
 outras funções auxiliares que sejam necessárias.
 
 \subsection*{Problema 1}
@@ -992,7 +991,7 @@ maisDir = cataBTree g
 maisEsq = cataBTree g
   where g = undefined
 
-insOrd' x = cataBTree g 
+insOrd' x = cataBTree g
   where g = undefined
 
 insOrd a x = undefined
@@ -1008,7 +1007,7 @@ rrot = undefined
 lrot = undefined
 
 splay l t =  undefined
-  
+
 \end{code}
 
 \subsection*{Problema 3}
@@ -1030,7 +1029,7 @@ cataBdt = undefined
 anaBdt = undefined
 
 navLTree :: LTree a -> ([Bool] -> LTree a)
-navLTree = cataLTree g 
+navLTree = cataLTree g
   where g = undefined
 \end{code}
 
@@ -1043,7 +1042,7 @@ bnavLTree = cataLTree g
 
 
 pbnavLTree = cataLTree g
-  where g = undefined 
+  where g = undefined
 
 \end{code}
 
@@ -1064,7 +1063,7 @@ janela = InWindow
 
 ----- defs auxiliares -------------
 
-put  = uncurry Translate 
+put  = uncurry Translate
 
 -------------------------------------------------
 \end{code}
